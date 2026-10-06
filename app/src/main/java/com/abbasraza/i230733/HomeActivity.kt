@@ -75,6 +75,8 @@ class HomeActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.btnMyAvatar).setOnClickListener {
             open(ProfileActivity::class.java)
         }
+
+        BottomNav.setup(this, R.id.tabHome)
     }
 
     private fun showReaction(label: String) {

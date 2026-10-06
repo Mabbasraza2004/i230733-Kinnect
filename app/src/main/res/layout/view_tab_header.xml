@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Header used by the tab screens: a title on the left and a search button.
+     Each screen sets the title text from its own layout via tvHeaderTitle. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingEnd="8dp">
+
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        style="@style/TitleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/btnSearch"
+        style="@style/IconButton"
+        android:background="@drawable/bg_avatar_light"
+        android:text="⌕" />
+</LinearLayout>

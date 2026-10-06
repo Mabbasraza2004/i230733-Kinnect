@@ -36,6 +36,10 @@
         <activity android:name=".VoiceCallActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".EditProfileActivity" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".FriendsActivity" />
+        <activity android:name=".MarketplaceActivity" />
+        <activity android:name=".NotificationsActivity" />
+        <activity android:name=".MenuActivity" />
     </application>
 
 </manifest>
