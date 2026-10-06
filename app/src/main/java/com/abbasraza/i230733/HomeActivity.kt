@@ -52,6 +52,14 @@ class HomeActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.btnShare).setOnClickListener {
             Toast.makeText(this, "Post shared", Toast.LENGTH_SHORT).show()
         }
+
+        // Stories
+        findViewById<TextView>(R.id.btnCreateStory).setOnClickListener {
+            open(CameraActivity::class.java)
+        }
+        openStoryOnClick(R.id.btnStoryOmar, "Omar Farooq")
+        openStoryOnClick(R.id.btnStoryAisha, "Aisha Khan")
+        openStoryOnClick(R.id.btnStoryHamza, "Hamza Ali")
     }
 
     private fun showReaction(label: String) {
@@ -64,6 +72,14 @@ class HomeActivity : AppCompatActivity() {
         liked = false
         btnLike.text = "♡ Like"
         btnLike.setTextColor(ContextCompat.getColor(this, R.color.ink_muted))
+    }
+
+    private fun openStoryOnClick(viewId: Int, name: String) {
+        findViewById<TextView>(viewId).setOnClickListener {
+            val intent = Intent(this, StoryViewerActivity::class.java)
+            intent.putExtra(StoryViewerActivity.EXTRA_NAME, name)
+            startActivity(intent)
+        }
     }
 
     private fun open(screen: Class<*>) {
