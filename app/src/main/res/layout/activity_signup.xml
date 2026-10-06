@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- Header with back arrow -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp">
+
+        <TextView
+            android:id="@+id/btnBack"
+            style="@style/IconButton"
+            android:text="←" />
+
+        <TextView
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Create account" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                style="@style/MutedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="It's quick and easy." />
+
+            <!-- First and last name side by side -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etFirstName"
+                    style="@style/InputField"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:hint="First name"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/etLastName"
+                    style="@style/InputField"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:hint="Last name"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etBirthday"
+                style="@style/InputField"
+                android:layout_width="match_parent"
+                android:layout_marginTop="12dp"
+                android:hint="Birthday (DD/MM/YYYY)"
+                android:inputType="date" />
+
+            <TextView
+                style="@style/BodyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/figtree_bold"
+                android:text="Gender" />
+
+            <RadioGroup
+                android:id="@+id/rgGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbFemale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Female" />
+
+                <RadioButton
+                    android:id="@+id/rbMale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/rbCustom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Custom" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/etSignupEmail"
+                style="@style/InputField"
+                android:layout_width="match_parent"
+                android:layout_marginTop="12dp"
+                android:hint="Mobile number or email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/etSignupPassword"
+                style="@style/InputField"
+                android:layout_width="match_parent"
+                android:layout_marginTop="12dp"
+                android:hint="New password"
+                android:inputType="textPassword" />
+
+            <TextView
+                style="@style/MutedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="By tapping Sign up, you agree to our Terms and Privacy Policy." />
+
+            <TextView
+                android:id="@+id/btnSignup"
+                style="@style/TealButton"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:text="Sign up" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
