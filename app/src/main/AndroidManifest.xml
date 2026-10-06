@@ -31,6 +31,9 @@
         <activity android:name=".YourStoryActivity" />
         <activity android:name=".CreatePostActivity" android:windowSoftInputMode="adjustResize" />
         <activity android:name=".PhotoPickerActivity" />
+        <activity android:name=".ChatsActivity" />
+        <activity android:name=".ChatActivity" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".VoiceCallActivity" />
     </application>
 
 </manifest>

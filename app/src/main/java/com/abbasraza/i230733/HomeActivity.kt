@@ -65,6 +65,11 @@ class HomeActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.btnCreatePostField).setOnClickListener {
             open(CreatePostActivity::class.java)
         }
+
+        // Messenger
+        findViewById<TextView>(R.id.btnChats).setOnClickListener {
+            open(ChatsActivity::class.java)
+        }
     }
 
     private fun showReaction(label: String) {
