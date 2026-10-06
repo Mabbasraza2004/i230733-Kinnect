@@ -70,6 +70,11 @@ class HomeActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.btnChats).setOnClickListener {
             open(ChatsActivity::class.java)
         }
+
+        // Own profile
+        findViewById<TextView>(R.id.btnMyAvatar).setOnClickListener {
+            open(ProfileActivity::class.java)
+        }
     }
 
     private fun showReaction(label: String) {

@@ -34,6 +34,8 @@
         <activity android:name=".ChatsActivity" />
         <activity android:name=".ChatActivity" android:windowSoftInputMode="adjustResize" />
         <activity android:name=".VoiceCallActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".EditProfileActivity" android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
