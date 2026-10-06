@@ -39,6 +39,10 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<TextView>(R.id.btnSearch).setOnClickListener {
+            startActivity(Intent(this, SearchActivity::class.java))
+        }
+
         BottomNav.setup(this, R.id.tabMenu)
     }
 }

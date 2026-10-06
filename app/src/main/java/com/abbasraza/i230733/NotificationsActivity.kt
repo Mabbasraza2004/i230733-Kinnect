@@ -1,5 +1,6 @@
 package com.abbasraza.i230733
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.LinearLayout
@@ -27,6 +28,10 @@ class NotificationsActivity : AppCompatActivity() {
         addNotification("AK", "Aisha Khan commented: \"Take me with you next time\"", "1h", unread = false)
         addNotification("HA", "Hamza Ali shared a memory with you.", "3h", unread = false)
         addNotification("BA", "It's Bilal Ahmed's birthday today. Wish him well!", "8h", unread = false)
+
+        findViewById<TextView>(R.id.btnSearch).setOnClickListener {
+            startActivity(Intent(this, SearchActivity::class.java))
+        }
 
         BottomNav.setup(this, R.id.tabNotifications)
     }

@@ -1,5 +1,6 @@
 package com.abbasraza.i230733
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.LinearLayout
@@ -29,6 +30,10 @@ class FriendsActivity : AppCompatActivity() {
         addRequest("Daniyal Shah", "1 mutual friend")
         addRequest("Noor Fatima", "7 mutual friends")
         updateCount()
+
+        findViewById<TextView>(R.id.btnSearch).setOnClickListener {
+            startActivity(Intent(this, SearchActivity::class.java))
+        }
 
         BottomNav.setup(this, R.id.tabFriends)
     }

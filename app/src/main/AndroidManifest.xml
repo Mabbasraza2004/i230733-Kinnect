@@ -40,6 +40,8 @@
         <activity android:name=".MarketplaceActivity" />
         <activity android:name=".NotificationsActivity" />
         <activity android:name=".MenuActivity" />
+        <activity android:name=".SearchActivity" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".OtherProfileActivity" />
     </application>
 
 </manifest>

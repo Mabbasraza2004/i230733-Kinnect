@@ -76,6 +76,11 @@ class HomeActivity : AppCompatActivity() {
             open(ProfileActivity::class.java)
         }
 
+        // Search
+        findViewById<TextView>(R.id.btnSearch).setOnClickListener {
+            open(SearchActivity::class.java)
+        }
+
         BottomNav.setup(this, R.id.tabHome)
     }
 

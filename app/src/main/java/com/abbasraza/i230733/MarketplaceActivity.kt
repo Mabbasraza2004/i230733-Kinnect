@@ -1,5 +1,6 @@
 package com.abbasraza.i230733
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.LayoutInflater
@@ -28,6 +29,10 @@ class MarketplaceActivity : AppCompatActivity() {
         addItem("Rs 1,200", "Set of plant pots", R.color.teal_light)
         addItem("Rs 25,000", "Used iPhone 11", R.color.chip)
         addItem("Rs 3,000", "Cricket bat", R.color.teal)
+
+        findViewById<TextView>(R.id.btnSearch).setOnClickListener {
+            startActivity(Intent(this, SearchActivity::class.java))
+        }
 
         BottomNav.setup(this, R.id.tabMarketplace)
     }
