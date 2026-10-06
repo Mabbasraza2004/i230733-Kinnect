@@ -60,6 +60,11 @@ class HomeActivity : AppCompatActivity() {
         openStoryOnClick(R.id.btnStoryOmar, "Omar Farooq")
         openStoryOnClick(R.id.btnStoryAisha, "Aisha Khan")
         openStoryOnClick(R.id.btnStoryHamza, "Hamza Ali")
+
+        // New post
+        findViewById<TextView>(R.id.btnCreatePostField).setOnClickListener {
+            open(CreatePostActivity::class.java)
+        }
     }
 
     private fun showReaction(label: String) {

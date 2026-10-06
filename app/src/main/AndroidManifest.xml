@@ -29,6 +29,8 @@
         <activity android:name=".CameraActivity" />
         <activity android:name=".StoryEditorActivity" android:windowSoftInputMode="adjustResize" />
         <activity android:name=".YourStoryActivity" />
+        <activity android:name=".CreatePostActivity" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".PhotoPickerActivity" />
     </application>
 
 </manifest>

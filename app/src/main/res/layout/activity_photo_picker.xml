@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- Header: Cancel, selected count, Done -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/btnCancel"
+            style="@style/BodyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="Cancel" />
+
+        <TextView
+            android:id="@+id/tvSelectedCount"
+            style="@style/TitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Camera roll"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/btnDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/figtree_bold"
+            android:padding="6dp"
+            android:text="Done"
+            android:textColor="@color/teal"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Tiles stand in for photos; PhotoPickerActivity loops over them -->
+        <GridLayout
+            android:id="@+id/photoGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="2dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/teal_light"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/chip"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/teal"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/rust"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/teal_light"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/dark"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/chip"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/teal_light"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/rust"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/teal"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/chip"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2dp"
+                android:background="@color/teal_light"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+        </GridLayout>
+    </ScrollView>
+</LinearLayout>
