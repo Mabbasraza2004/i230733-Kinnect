@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand colours used across every screen -->
+    <color name="teal">#0B5F63</color>
+    <color name="teal_light">#DCECEC</color>
+    <color name="rust">#B94A2C</color>
+    <color name="background">#F4F2EF</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="chip">#EAE6E1</color>
+    <color name="divider">#DDD8D2</color>
+    <color name="ink">#1E1E1E</color>
+    <color name="ink_muted">#6E6862</color>
+    <color name="dark">#151515</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>
