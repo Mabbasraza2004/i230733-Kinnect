@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- Top bar: brand name, search and messenger buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/figtree_bold"
+            android:text="kinnect"
+            android:textColor="@color/teal"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/btnSearch"
+            style="@style/IconButton"
+            android:text="⌕" />
+
+        <TextView
+            android:id="@+id/btnChats"
+            style="@style/IconButton"
+            android:text="✉" />
+    </LinearLayout>
+
+    <!-- Everything between the top bar and the tab bar scrolls -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!-- "What's on your mind?" composer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/btnMyAvatar"
+                    style="@style/Avatar"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="AR" />
+
+                <TextView
+                    android:id="@+id/btnCreatePostField"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_chip"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:text="What's on your mind?"
+                    android:textColor="@color/ink_muted" />
+            </LinearLayout>
+
+            <!-- Stories row -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+                    <TextView
+                        android:id="@+id/btnCreateStory"
+                        android:layout_width="100dp"
+                        android:layout_height="160dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:text="+\nCreate story"
+                        android:textColor="@color/teal"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/figtree_bold" />
+
+                    <TextView
+                        android:id="@+id/btnStoryOmar"
+                        android:layout_width="100dp"
+                        android:layout_height="160dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_story_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="bottom|start"
+                        android:padding="10dp"
+                        android:text="Omar Farooq"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/figtree_bold" />
+
+                    <TextView
+                        android:id="@+id/btnStoryAisha"
+                        android:layout_width="100dp"
+                        android:layout_height="160dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_story_card"
+                        android:backgroundTint="@color/rust"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="bottom|start"
+                        android:padding="10dp"
+                        android:text="Aisha Khan"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/figtree_bold" />
+
+                    <TextView
+                        android:id="@+id/btnStoryHamza"
+                        android:layout_width="100dp"
+                        android:layout_height="160dp"
+                        android:background="@drawable/bg_story_card"
+                        android:backgroundTint="@color/dark"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="bottom|start"
+                        android:padding="10dp"
+                        android:text="Hamza Ali"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/figtree_bold" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- A single post in the feed -->
+            <LinearLayout
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="12dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Avatar"
+                        android:background="@drawable/bg_avatar_rust"
+                        android:text="OF" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/BodyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/figtree_bold"
+                            android:text="Omar Farooq" />
+
+                        <TextView
+                            style="@style/MutedText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2h · Islamabad" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/BodyText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Weekend hike up Daman-e-Koh. The view never gets old!" />
+
+                <!-- Placeholder block in place of a real photo -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_photo" />
+
+                <TextView
+                    android:id="@+id/tvLikeCount"
+                    style="@style/MutedText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="24 likes · 6 comments" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/divider" />
+
+                <!-- Like / Comment / Share actions -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/btnLike"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:text="♡ Like"
+                        android:textColor="@color/ink_muted" />
+
+                    <TextView
+                        android:id="@+id/btnComment"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:text="Comment"
+                        android:textColor="@color/ink_muted" />
+
+                    <TextView
+                        android:id="@+id/btnShare"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:text="Share"
+                        android:textColor="@color/ink_muted" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- A second, text-only post -->
+            <LinearLayout
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Avatar"
+                        android:text="AK" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/BodyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/figtree_bold"
+                            android:text="Aisha Khan" />
+
+                        <TextView
+                            style="@style/MutedText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5h" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/BodyText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Anyone up for chai in F-7 this evening? ☕" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/view_bottom_nav" />
+
+</LinearLayout>

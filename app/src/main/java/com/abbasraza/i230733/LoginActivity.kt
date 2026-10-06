@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         findViewById<TextView>(R.id.btnLogin).setOnClickListener {
-            Toast.makeText(this, "Logged in", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, HomeActivity::class.java))
         }
 
         findViewById<TextView>(R.id.btnCreateAccount).setOnClickListener {
