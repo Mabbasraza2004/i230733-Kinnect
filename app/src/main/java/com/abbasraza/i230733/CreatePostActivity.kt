@@ -4,17 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-/**
- * "Create post" screen with a text box and options to add a photo
- * or open the camera.
- */
 class CreatePostActivity : AppCompatActivity() {
-
     private lateinit var btnPost: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,9 +19,8 @@ class CreatePostActivity : AppCompatActivity() {
 
         val etPost = findViewById<EditText>(R.id.etPost)
         btnPost = findViewById(R.id.btnPost)
-        setPostEnabled(false)
+        setPostEnabled(etPost.text.isNotBlank())
 
-        // Only allow posting once something has been typed
         etPost.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
@@ -34,7 +29,7 @@ class CreatePostActivity : AppCompatActivity() {
             }
         })
 
-        findViewById<TextView>(R.id.btnClose).setOnClickListener { finish() }
+        findViewById<View>(R.id.btnClose).setOnClickListener { finish() }
 
         btnPost.setOnClickListener {
             Toast.makeText(this, "Posted!", Toast.LENGTH_SHORT).show()
@@ -49,12 +44,17 @@ class CreatePostActivity : AppCompatActivity() {
             startActivity(Intent(this, CameraActivity::class.java))
         }
 
-        findViewById<TextView>(R.id.rowTagPeople).setOnClickListener {
-            Toast.makeText(this, "Tagging coming soon", Toast.LENGTH_SHORT).show()
+        val comingSoon = intArrayOf(
+            R.id.rowTagPeople, R.id.rowFeeling, R.id.rowCheckIn, R.id.rowLive, R.id.rowEvent
+        )
+        for (id in comingSoon) {
+            val row = findViewById<TextView>(id)
+            row.setOnClickListener {
+                Toast.makeText(this, "${row.text} coming soon", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
-    /** Greys the Post button out when there is nothing to post. */
     private fun setPostEnabled(enabled: Boolean) {
         btnPost.isEnabled = enabled
         btnPost.alpha = if (enabled) 1f else 0.4f

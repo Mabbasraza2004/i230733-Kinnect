@@ -1,60 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/storyEditorRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal"
+    android:background="@color/dark"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    android:padding="12dp">
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/storyPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_green" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/btnCloseEditor"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_circle_glass"
+                    android:clickable="true"
+                    android:contentDescription="Close"
+                    android:focusable="true"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_close"
+                    android:tint="@color/white" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_circle_glass"
+                    android:contentDescription="Tag people"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_person_add"
+                    android:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_circle_glass"
+                    android:fontFamily="@font/figtree_bold"
+                    android:gravity="center"
+                    android:text="Aa"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_circle_glass"
+                    android:contentDescription="Stickers"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_smile"
+                    android:tint="@color/white" />
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_circle_glass"
+                    android:contentDescription="Music"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_music"
+                    android:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/btnChangeColour"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_circle_glass"
+                    android:clickable="true"
+                    android:contentDescription="Effects"
+                    android:focusable="true"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_sparkle"
+                    android:tint="@color/white" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etStoryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/bg_sticker_rust"
+                android:fontFamily="@font/figtree_bold"
+                android:hint="Type something"
+                android:inputType="textCapSentences"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:rotation="-3"
+                android:text="Saturday plans"
+                android:textColor="@color/white"
+                android:textColorHint="#B3FFFFFF"
+                android:textSize="24sp" />
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="14dp">
 
-        <TextView
-            android:id="@+id/btnCloseEditor"
-            style="@style/IconButton"
-            android:text="✕"
-            android:textColor="@color/white" />
-
-        <View
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_pill_dark"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <!-- Cycles the background colour -->
-        <TextView
-            android:id="@+id/btnChangeColour"
-            style="@style/ChipButton"
-            android:layout_width="wrap_content"
-            android:text="🎨 Colour" />
+            <TextView
+                style="@style/Avatar"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:text="JW"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/figtree_bold"
+                android:text="Your story"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_pill_dark"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/bg_avatar"
+                android:backgroundTint="@color/online"
+                android:padding="6dp"
+                android:src="@drawable/ic_star"
+                android:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/figtree_bold"
+                android:text="Close friends"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnShareStory"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_avatar"
+            android:clickable="true"
+            android:contentDescription="Share story"
+            android:focusable="true"
+            android:padding="13dp"
+            android:src="@drawable/ic_arrow_right"
+            android:tint="@color/white" />
     </LinearLayout>
-
-    <!-- The user types straight onto the story -->
-    <EditText
-        android:id="@+id/etStoryText"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@android:color/transparent"
-        android:fontFamily="@font/figtree_bold"
-        android:gravity="center"
-        android:hint="Start typing"
-        android:inputType="textMultiLine|textCapSentences"
-        android:textColor="@color/white"
-        android:textColorHint="@color/teal_light"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/btnShareStory"
-        style="@style/TealButton"
-        android:layout_width="match_parent"
-        android:background="@drawable/bg_button_outline"
-        android:backgroundTint="@color/white"
-        android:text="Share to story"
-        android:textColor="@color/white" />
-
 </LinearLayout>

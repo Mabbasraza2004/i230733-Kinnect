@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Brand colours used across every screen -->
-    <color name="teal">#0B5F63</color>
-    <color name="teal_light">#DCECEC</color>
-    <color name="rust">#B94A2C</color>
-    <color name="background">#F4F2EF</color>
+    <color name="teal">#0D5F63</color>
+    <color name="teal_light">#DFEDED</color>
+    <color name="rust">#BC4A2C</color>
+    <color name="background">#F3F1EE</color>
     <color name="surface">#FFFFFF</color>
     <color name="chip">#EAE6E1</color>
     <color name="divider">#DDD8D2</color>
     <color name="ink">#1E1E1E</color>
     <color name="ink_muted">#6E6862</color>
-    <color name="dark">#151515</color>
+    <color name="dark">#141414</color>
+    <color name="dark_chip">#2B2A28</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="scrim">#80000000</color>
+    <color name="glass">#66FFFFFF</color>
+    <color name="glass_dark">#59000000</color>
+
+    <color name="av_green">#2F6E4F</color>
+    <color name="av_indigo">#4F5296</color>
+    <color name="av_brown">#8E5A2B</color>
+    <color name="av_purple">#7A4F80</color>
+    <color name="av_crimson">#A03C50</color>
+    <color name="av_slate">#3F6E8E</color>
+    <color name="av_olive">#6B5E2E</color>
+
+    <color name="react_love">#D23B53</color>
+    <color name="react_amber">#D18A12</color>
+    <color name="react_angry">#C2492B</color>
+
+    <color name="online">#34A853</color>
+    <color name="call_red">#C62828</color>
 </resources>

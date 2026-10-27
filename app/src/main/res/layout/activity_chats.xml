@@ -2,49 +2,279 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="64dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="8dp">
+        android:paddingStart="6dp"
+        android:paddingEnd="14dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/btnBack"
-            style="@style/IconButton"
-            android:text="←" />
+            style="@style/ToolbarIcon"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_back" />
 
         <TextView
-            style="@style/TitleText"
-            android:layout_width="wrap_content"
+            style="@style/HeadingText"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Chats" />
-    </LinearLayout>
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:text="Chats"
+            android:textSize="30sp" />
 
-    <EditText
-        style="@style/InputField"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/bg_chip"
-        android:hint="⌕  Search"
-        android:inputType="text" />
+        <ImageView
+            style="@style/CircleIconButton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:padding="11dp"
+            android:contentDescription="New message"
+            android:src="@drawable/ic_edit" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <!-- Rows are added from ChatsActivity -->
         <LinearLayout
-            android:id="@+id/chatList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_pill"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/ink_muted"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:text="Search"
+                android:textColor="@color/ink_muted"
+                android:textSize="17sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:background="@drawable/bg_circle_chip"
+                            android:padding="18dp"
+                            android:src="@drawable/ic_plus"
+                            android:tint="@color/ink" />
+
+                        <TextView
+                            style="@style/MutedText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Your note" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="64dp"
+                            android:layout_height="64dp">
+
+                            <TextView
+                                style="@style/Avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/av_crimson"
+                                android:text="AK"
+                                android:textSize="20sp" />
+
+                            <View
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="bottom|end"
+                                android:background="@drawable/bg_dot_online" />
+                        </FrameLayout>
+
+                        <TextView
+                            style="@style/MutedText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Aisha"
+                            android:textColor="@color/ink" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="64dp"
+                            android:layout_height="64dp">
+
+                            <TextView
+                                style="@style/Avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/av_green"
+                                android:text="OF"
+                                android:textSize="20sp" />
+
+                            <View
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="bottom|end"
+                                android:background="@drawable/bg_dot_online" />
+                        </FrameLayout>
+
+                        <TextView
+                            style="@style/MutedText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Omar"
+                            android:textColor="@color/ink" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="64dp"
+                            android:layout_height="64dp">
+
+                            <TextView
+                                style="@style/Avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/av_indigo"
+                                android:text="SI"
+                                android:textSize="20sp" />
+
+                            <View
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="bottom|end"
+                                android:background="@drawable/bg_dot_online" />
+                        </FrameLayout>
+
+                        <TextView
+                            style="@style/MutedText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Sara"
+                            android:textColor="@color/ink" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="64dp"
+                            android:layout_height="64dp">
+
+                            <TextView
+                                style="@style/Avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/av_brown"
+                                android:text="HA"
+                                android:textSize="20sp" />
+
+                            <View
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="bottom|end"
+                                android:background="@drawable/bg_dot_online" />
+                        </FrameLayout>
+
+                        <TextView
+                            style="@style/MutedText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Hamza"
+                            android:textColor="@color/ink" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:id="@+id/chatList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />
+        </LinearLayout>
     </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/ChatsBarButton"
+            android:drawableTop="@drawable/ic_messenger"
+            android:drawableTint="@color/teal"
+            android:text="Chats"
+            android:textColor="@color/teal" />
+
+        <TextView
+            style="@style/ChatsBarButton"
+            android:drawableTop="@drawable/ic_friends"
+            android:text="People" />
+
+        <TextView
+            style="@style/ChatsBarButton"
+            android:drawableTop="@drawable/ic_stories"
+            android:text="Stories" />
+    </LinearLayout>
 </LinearLayout>

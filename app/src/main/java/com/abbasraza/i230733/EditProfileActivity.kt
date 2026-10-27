@@ -7,12 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-/**
- * Form for changing the name and bio. "Save" sends the new values back to
- * ProfileActivity; "Cancel" closes without changing anything.
- */
 class EditProfileActivity : AppCompatActivity() {
-
     companion object {
         const val EXTRA_NAME = "name"
         const val EXTRA_BIO = "bio"
@@ -25,7 +20,6 @@ class EditProfileActivity : AppCompatActivity() {
         val etName = findViewById<EditText>(R.id.etEditName)
         val etBio = findViewById<EditText>(R.id.etEditBio)
 
-        // Pre-fill with the current values from the profile screen
         etName.setText(intent.getStringExtra(EXTRA_NAME))
         etBio.setText(intent.getStringExtra(EXTRA_BIO))
 

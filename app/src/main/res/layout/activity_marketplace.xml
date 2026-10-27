@@ -2,10 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <include layout="@layout/view_tab_header" />
+
+    <include layout="@layout/view_bottom_nav" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,38 +19,105 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp">
+            android:paddingStart="16dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="4dp">
+                android:orientation="horizontal">
 
-                <TextView
-                    style="@style/ChipButton"
-                    android:layout_width="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="Sell" />
+                <LinearLayout
+                    android:id="@+id/btnSell"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <TextView
-                    style="@style/ChipButton"
-                    android:layout_width="wrap_content"
-                    android:text="Categories" />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_edit"
+                        android:tint="@color/ink" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/figtree_bold"
+                        android:text="Sell"
+                        android:textColor="@color/ink"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnCategories"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_grid"
+                        android:tint="@color/ink" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/figtree_bold"
+                        android:text="Categories"
+                        android:textColor="@color/ink"
+                        android:textSize="16sp" />
+                </LinearLayout>
             </LinearLayout>
 
-            <TextView
-                style="@style/TitleText"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="4dp"
-                android:text="Today's picks"
-                android:textSize="18sp" />
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <!-- Listing cards are added here from MarketplaceActivity -->
+                <TextView
+                    style="@style/SectionText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Today's picks"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_location"
+                    android:tint="@color/teal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/figtree_bold"
+                    android:text="Karachi · 40 km"
+                    android:textColor="@color/teal"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
             <GridLayout
                 android:id="@+id/itemGrid"
                 android:layout_width="match_parent"
@@ -55,6 +125,4 @@
                 android:columnCount="2" />
         </LinearLayout>
     </ScrollView>
-
-    <include layout="@layout/view_bottom_nav" />
 </LinearLayout>

@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="60dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="8dp">
+        android:paddingStart="6dp"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            style="@style/ToolbarIcon"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_back" />
 
         <TextView
-            android:id="@+id/btnBack"
-            style="@style/IconButton"
-            android:text="←" />
+            android:id="@+id/tvOtherTitle"
+            style="@style/TitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            style="@style/ToolbarIcon"
+            android:contentDescription="Search"
+            android:src="@drawable/ic_search" />
     </LinearLayout>
 
     <ScrollView
@@ -25,48 +42,68 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
 
-            <!-- Cover + avatar -->
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="230dp">
+                android:layout_height="270dp">
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="170dp"
-                    android:background="@color/chip" />
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_night" />
 
-                <TextView
-                    android:id="@+id/tvOtherAvatar"
-                    style="@style/Avatar"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_gravity="bottom|start"
-                    android:layout_marginStart="16dp"
-                    android:background="@drawable/bg_avatar_rust"
-                    android:textSize="38sp" />
+                <FrameLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:background="@drawable/bg_avatar_ring"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tvOtherAvatar"
+                        style="@style/Avatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/av_green"
+                        android:textSize="48sp" />
+                </FrameLayout>
             </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
                 <TextView
                     android:id="@+id/tvOtherName"
-                    style="@style/TitleText"
+                    style="@style/HeadingText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp" />
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:textSize="30sp" />
 
                 <TextView
                     style="@style/MutedText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Lives in Islamabad · 18 mutual friends" />
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/other_friend_count"
+                    android:textSize="15sp" />
+
+                <TextView
+                    style="@style/BodyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp"
+                    android:text="Night photographer. Karachi after dark."
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,38 +113,175 @@
 
                     <TextView
                         android:id="@+id/btnAddFriend"
-                        style="@style/TealButton"
+                        style="@style/SmallTealButton"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginEnd="6dp"
+                        android:layout_height="44dp"
                         android:layout_weight="1"
-                        android:text="+ Add friend" />
+                        android:drawableStart="@drawable/ic_person_add"
+                        android:drawableTint="@color/white"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="10dp"
+                        android:text="Add friend" />
 
                     <TextView
                         android:id="@+id/btnMessage"
-                        style="@style/ChipButton"
+                        style="@style/SmallGreyButton"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="6dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
-                        android:text="✉ Message" />
+                        android:drawableStart="@drawable/ic_messenger"
+                        android:drawableTint="@color/ink"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="10dp"
+                        android:text="Message" />
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_button_small_grey"
+                        android:contentDescription="More"
+                        android:padding="11dp"
+                        android:src="@drawable/ic_more"
+                        android:tint="@color/ink" />
                 </LinearLayout>
 
-                <TextView
-                    style="@style/BodyText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/figtree_bold"
-                    android:text="Posts" />
-
-                <TextView
-                    style="@style/Card"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Weekend hike up Daman-e-Koh. The view never gets old!"
-                    android:textColor="@color/ink" />
+                    android:layout_marginTop="14dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Avatar"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:backgroundTint="@color/av_crimson"
+                        android:text="AK"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        style="@style/Avatar"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="-8dp"
+                        android:backgroundTint="@color/av_purple"
+                        android:text="LM"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        style="@style/Avatar"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="-8dp"
+                        android:backgroundTint="@color/av_slate"
+                        android:text="ZR"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        style="@style/BodyText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/other_mutual_friends" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/divider" />
+
+                <TextView
+                    style="@style/DetailRow"
+                    android:drawableStart="@drawable/ic_briefcase"
+                    android:text="@string/other_work" />
+
+                <TextView
+                    style="@style/DetailRow"
+                    android:drawableStart="@drawable/ic_location"
+                    android:text="@string/detail_lives" />
+
+                <TextView
+                    style="@style/DetailRow"
+                    android:drawableStart="@drawable/ic_clock"
+                    android:text="Joined June 2017" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/SectionText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Photos"
+                        android:textSize="21sp" />
+
+                    <TextView
+                        style="@style/EditLink"
+                        android:text="See all"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="106dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_night" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_lilac" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_blue" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

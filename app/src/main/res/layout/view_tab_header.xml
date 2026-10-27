@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Header used by the tab screens: a title on the left and a search button.
-     Each screen sets the title text from its own layout via tvHeaderTitle. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
+    android:layout_height="60dp"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingStart="16dp"
-    android:paddingEnd="8dp">
+    android:paddingStart="18dp"
+    android:paddingEnd="14dp">
 
     <TextView
         android:id="@+id/tvHeaderTitle"
-        style="@style/TitleText"
+        style="@style/HeadingText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="24sp" />
+        android:layout_weight="1" />
 
-    <TextView
+    <ImageView
         android:id="@+id/btnSearch"
-        style="@style/IconButton"
-        android:background="@drawable/bg_avatar_light"
-        android:text="⌕" />
+        style="@style/CircleIconButton"
+        android:contentDescription="Search"
+        android:src="@drawable/ic_search" />
+
+    <FrameLayout
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="6dp">
+
+        <ImageView
+            android:id="@+id/btnChats"
+            style="@style/CircleIconButton"
+            android:layout_gravity="bottom|start"
+            android:contentDescription="Chats"
+            android:src="@drawable/ic_messenger" />
+
+        <TextView
+            style="@style/Badge"
+            android:layout_gravity="top|end"
+            android:text="3" />
+    </FrameLayout>
 </LinearLayout>

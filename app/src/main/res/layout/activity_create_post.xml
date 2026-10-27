@@ -2,28 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <!-- Header: close, title, Post -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="60dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="8dp"
-        android:paddingEnd="12dp">
+        android:paddingStart="6dp"
+        android:paddingEnd="14dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/btnClose"
-            style="@style/IconButton"
-            android:text="✕" />
+            style="@style/ToolbarIcon"
+            android:contentDescription="Close"
+            android:src="@drawable/ic_close" />
 
         <TextView
             style="@style/TitleText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="6dp"
             android:layout_weight="1"
             android:text="Create post" />
 
@@ -31,9 +32,9 @@
             android:id="@+id/btnPost"
             style="@style/TealButton"
             android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:paddingStart="18dp"
-            android:paddingEnd="18dp"
+            android:layout_height="40dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:text="Post" />
     </LinearLayout>
 
@@ -42,22 +43,26 @@
         android:layout_height="1dp"
         android:background="@color/divider" />
 
-    <!-- Who is posting -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:paddingStart="16dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="16dp">
 
         <TextView
             style="@style/Avatar"
-            android:text="AR" />
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:text="JW"
+            android:textSize="17sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="12dp"
             android:orientation="vertical">
 
             <TextView
@@ -65,74 +70,281 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/figtree_bold"
-                android:text="Abbas Raza" />
+                android:text="Jacob West"
+                android:textSize="16sp" />
 
-            <TextView
-                style="@style/MutedText"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:background="@drawable/bg_chip"
-                android:paddingStart="8dp"
-                android:paddingTop="2dp"
-                android:paddingEnd="8dp"
-                android:paddingBottom="2dp"
-                android:text="🌐 Public" />
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:background="@drawable/bg_teal_outline_small"
+                    android:drawableStart="@drawable/ic_globe"
+                    android:drawableEnd="@drawable/ic_chevron_down"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="@color/teal"
+                    android:fontFamily="@font/figtree_bold"
+                    android:gravity="center_vertical"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="4dp"
+                    android:text="Public"
+                    android:textColor="@color/teal"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_teal_outline_small"
+                    android:drawableStart="@drawable/ic_plus"
+                    android:drawableEnd="@drawable/ic_chevron_down"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="@color/teal"
+                    android:fontFamily="@font/figtree_bold"
+                    android:gravity="center_vertical"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="4dp"
+                    android:text="Album"
+                    android:textColor="@color/teal"
+                    android:textSize="13sp" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
     <EditText
         android:id="@+id/etPost"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@android:color/transparent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@null"
         android:gravity="top|start"
         android:hint="What's on your mind?"
         android:inputType="textMultiLine|textCapSentences"
+        android:minHeight="90dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
+        android:text="Weekend plan: coffee, sketching, and absolutely no email."
         android:textColor="@color/ink"
-        android:textSize="20sp" />
+        android:textColorHint="@color/ink_muted"
+        android:textSize="24sp" />
 
-    <!-- Options at the bottom -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_card_border"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/figtree_bold"
+                android:gravity="center"
+                android:text="Aa"
+                android:textColor="@color/ink"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_rounded_square"
+                android:backgroundTint="@color/teal" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_rounded_square"
+                android:backgroundTint="@color/rust" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_rounded_square"
+                android:backgroundTint="@color/av_indigo" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_rounded_square"
+                android:backgroundTint="@color/av_green" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_rounded_square"
+                android:backgroundTint="@color/react_amber" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_rounded_square"
+                android:backgroundTint="@color/av_purple" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_rounded_square"
+                android:backgroundTint="@color/dark" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/surface"
-        android:orientation="vertical">
+        android:background="@drawable/bg_sheet"
+        android:elevation="12dp"
+        android:orientation="vertical"
+        android:paddingBottom="8dp">
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_handle" />
 
         <TextView
             android:id="@+id/rowPhotoVideo"
-            style="@style/BodyText"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:drawableStart="@drawable/ic_image"
+            android:drawablePadding="18dp"
+            android:drawableTint="@color/av_green"
             android:focusable="true"
             android:gravity="center_vertical"
-            android:paddingStart="20dp"
-            android:text="🖼   Photo/video" />
-
-        <TextView
-            android:id="@+id/rowCamera"
-            style="@style/BodyText"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:paddingStart="20dp"
-            android:text="📷   Camera" />
+            android:paddingStart="28dp"
+            android:paddingEnd="20dp"
+            android:text="Photo/video"
+            android:textColor="@color/ink"
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/rowTagPeople"
-            style="@style/BodyText"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:drawableStart="@drawable/ic_tag"
+            android:drawablePadding="18dp"
+            android:drawableTint="@color/av_slate"
             android:focusable="true"
             android:gravity="center_vertical"
-            android:paddingStart="20dp"
-            android:text="👤   Tag people" />
+            android:paddingStart="28dp"
+            android:paddingEnd="20dp"
+            android:text="Tag people"
+            android:textColor="@color/ink"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/rowFeeling"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_smile"
+            android:drawablePadding="18dp"
+            android:drawableTint="@color/react_amber"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="28dp"
+            android:paddingEnd="20dp"
+            android:text="Feeling/activity"
+            android:textColor="@color/ink"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/rowCheckIn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_location"
+            android:drawablePadding="18dp"
+            android:drawableTint="@color/rust"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="28dp"
+            android:paddingEnd="20dp"
+            android:text="Check in"
+            android:textColor="@color/ink"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/rowLive"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_video"
+            android:drawablePadding="18dp"
+            android:drawableTint="@color/av_crimson"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="28dp"
+            android:paddingEnd="20dp"
+            android:text="Live video"
+            android:textColor="@color/ink"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/rowCamera"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_camera"
+            android:drawablePadding="18dp"
+            android:drawableTint="@color/teal"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="28dp"
+            android:paddingEnd="20dp"
+            android:text="Camera"
+            android:textColor="@color/ink"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/rowEvent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_calendar"
+            android:drawablePadding="18dp"
+            android:drawableTint="@color/av_indigo"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="28dp"
+            android:paddingEnd="20dp"
+            android:text="Create event"
+            android:textColor="@color/ink"
+            android:textSize="17sp" />
     </LinearLayout>
 </LinearLayout>

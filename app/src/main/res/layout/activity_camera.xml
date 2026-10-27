@@ -1,93 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp">
-
-        <TextView
-            android:id="@+id/btnCloseCamera"
-            style="@style/IconButton"
-            android:text="✕"
-            android:textColor="@color/white" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/figtree_bold"
-            android:gravity="center"
-            android:text="Camera"
-            android:textColor="@color/white"
-            android:textSize="17sp" />
-
-        <TextView
-            style="@style/IconButton"
-            android:text="⚡"
-            android:textColor="@color/white" />
-    </LinearLayout>
-
-    <!-- Fake viewfinder -->
-    <TextView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="12dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:background="@drawable/bg_card"
-        android:backgroundTint="#2A2A2A"
-        android:gravity="center"
-        android:text="Camera preview"
-        android:textColor="@color/ink_muted" />
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp">
 
-    <!-- Mode labels -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_green" />
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_margin="12dp"
+                android:background="@drawable/bg_circle_glass"
+                android:padding="11dp"
+                android:src="@drawable/ic_settings"
+                android:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/btnCloseCamera"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="top|end"
+                android:layout_margin="12dp"
+                android:background="@drawable/bg_circle_glass"
+                android:clickable="true"
+                android:contentDescription="Close"
+                android:focusable="true"
+                android:padding="11dp"
+                android:src="@drawable/ic_close"
+                android:tint="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_card_border"
+                    android:padding="2dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_sea" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_circle_glass"
+                    android:padding="13dp"
+                    android:src="@drawable/ic_flash"
+                    android:tint="@color/white" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:id="@+id/btnShutter"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:background="@drawable/bg_shutter"
+                    android:clickable="true"
+                    android:contentDescription="Take photo"
+                    android:focusable="true" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_circle_glass"
+                    android:padding="13dp"
+                    android:src="@drawable/ic_flip"
+                    android:tint="@color/white" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="bottom|start"
+                        android:background="@drawable/bg_circle_glass"
+                        android:padding="13dp"
+                        android:src="@drawable/ic_smile"
+                        android:tint="@color/white" />
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="top|end"
+                        android:background="@drawable/bg_badge" />
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="72dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="TEXT"
-            android:textColor="@color/ink_muted" />
+            style="@style/CameraMode"
+            android:text="TEXT" />
 
         <TextView
+            style="@style/CameraMode"
+            android:text="LIVE" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/figtree_bold"
-            android:padding="8dp"
-            android:text="NORMAL"
-            android:textColor="@color/white" />
+            android:layout_marginStart="9dp"
+            android:layout_marginEnd="9dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/figtree_bold"
+                android:letterSpacing="0.1"
+                android:text="STORY"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/white" />
+        </LinearLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="BOOMERANG"
-            android:textColor="@color/ink_muted" />
+            style="@style/CameraMode"
+            android:text="POST" />
+
+        <TextView
+            style="@style/CameraMode"
+            android:text="BOOMERANG" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/btnShutter"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/bg_shutter"
-        android:clickable="true"
-        android:contentDescription="Take photo"
-        android:focusable="true" />
-
 </LinearLayout>

@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kinnect">
 
-        <!-- The splash screen is the launcher entry point -->
         <activity
             android:name=".SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Kinnect.Teal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,15 +25,15 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".CommentsActivity" android:windowSoftInputMode="adjustResize" />
         <activity android:name=".ReactionPickerActivity" android:theme="@style/Theme.Kinnect.Dialog" />
-        <activity android:name=".StoryViewerActivity" />
-        <activity android:name=".CameraActivity" />
-        <activity android:name=".StoryEditorActivity" android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".YourStoryActivity" />
+        <activity android:name=".StoryViewerActivity" android:theme="@style/Theme.Kinnect.Dark" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".CameraActivity" android:theme="@style/Theme.Kinnect.Dark" />
+        <activity android:name=".StoryEditorActivity" android:theme="@style/Theme.Kinnect.Dark" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".YourStoryActivity" android:theme="@style/Theme.Kinnect.Dark" />
         <activity android:name=".CreatePostActivity" android:windowSoftInputMode="adjustResize" />
         <activity android:name=".PhotoPickerActivity" />
         <activity android:name=".ChatsActivity" />
         <activity android:name=".ChatActivity" android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".VoiceCallActivity" />
+        <activity android:name=".VoiceCallActivity" android:theme="@style/Theme.Kinnect.Teal" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".EditProfileActivity" android:windowSoftInputMode="adjustResize" />
         <activity android:name=".FriendsActivity" />

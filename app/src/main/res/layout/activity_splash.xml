@@ -4,30 +4,48 @@
     android:layout_height="match_parent"
     android:background="@color/teal"
     android:fitsSystemWindows="true"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <ImageView
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/logo" />
+        android:src="@drawable/ic_logo"
+        android:tint="@color/white" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:fontFamily="@font/figtree_bold"
         android:text="kinnect"
         android:textColor="@color/white"
-        android:textSize="34sp" />
+        android:textSize="48sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Stay close to the people who matter"
+        android:text="from"
         android:textColor="@color/teal_light"
-        android:textSize="14sp" />
+        android:textSize="13sp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="@font/figtree_bold"
+        android:letterSpacing="0.15"
+        android:text="SMD"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
 </LinearLayout>

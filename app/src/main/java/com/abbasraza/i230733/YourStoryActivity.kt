@@ -2,18 +2,14 @@ package com.abbasraza.i230733
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-/**
- * Shows the story the user just shared, using the text and colour
- * passed in from StoryEditorActivity.
- */
 class YourStoryActivity : AppCompatActivity() {
-
     companion object {
         const val EXTRA_TEXT = "text"
-        const val EXTRA_COLOUR = "colour"
+        const val EXTRA_PHOTO = "photo"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,13 +17,12 @@ class YourStoryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_your_story)
 
         val text = intent.getStringExtra(EXTRA_TEXT)
-        val colour = intent.getIntExtra(EXTRA_COLOUR, R.color.teal)
+        val photo = intent.getIntExtra(EXTRA_PHOTO, R.drawable.img_green)
 
-        // Fall back to a default line if the user shared an empty story
         findViewById<TextView>(R.id.tvYourStoryText).text =
-            if (text.isNullOrBlank()) "Hello from Kinnect 👋" else text
-        findViewById<View>(R.id.yourStoryRoot).setBackgroundResource(colour)
+            if (text.isNullOrBlank()) "Saturday plans" else text
+        findViewById<ImageView>(R.id.yourStoryPhoto).setImageResource(photo)
 
-        findViewById<TextView>(R.id.btnCloseStory).setOnClickListener { finish() }
+        findViewById<View>(R.id.btnCloseStory).setOnClickListener { finish() }
     }
 }

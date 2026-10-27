@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Kinnect</string>
+
+    <string name="post_lina_title"><b>Lina Marsh</b> is at <b>Clifton Beach</b></string>
+    <string name="profile_friend_count"><b>834</b> friends</string>
+    <string name="other_friend_count"><b>1,204</b> friends · <b>38</b> mutual</string>
+    <string name="other_mutual_friends">Friends with <b>Aisha Khan</b>, <b>Lina Marsh</b> and <b>36 others</b></string>
+    <string name="detail_work">Designer at <b>Pixsellz</b></string>
+    <string name="detail_study">Studied at <b>FAST-NUCES</b></string>
+    <string name="detail_lives">Lives in <b>Karachi, Pakistan</b></string>
+    <string name="other_work">Photographer at <b>Studio Nocturne</b></string>
+    <string name="replying_to">Replying to <b>Aisha Khan</b></string>
 </resources>

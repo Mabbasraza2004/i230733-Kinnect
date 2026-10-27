@@ -15,13 +15,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-/**
- * UI tests for the main navigation flows. Every test starts on the login screen.
- * Run with: Run > 'NavigationTests' (needs an emulator or phone).
- */
 @RunWith(AndroidJUnit4::class)
 class NavigationTests {
-
     @get:Rule
     val activityRule = ActivityScenarioRule(LoginActivity::class.java)
 
@@ -55,10 +50,8 @@ class NavigationTests {
         onView(withId(R.id.tabMenu)).perform(click())
         onView(withId(R.id.btnLogout)).perform(click())
 
-        // Back on the login screen...
         onView(withId(R.id.btnLogin)).check(matches(isDisplayed()))
 
-        // ...and nothing is left behind it, so Back closes the app
         assertThrows(NoActivityResumedException::class.java) { pressBack() }
     }
 }

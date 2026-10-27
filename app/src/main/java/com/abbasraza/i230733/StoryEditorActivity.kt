@@ -4,38 +4,31 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
-/**
- * Lets the user type text on top of their story and change the
- * background colour, then share it.
- */
 class StoryEditorActivity : AppCompatActivity() {
-
-    // Background colours the user can cycle through
-    private val colours = intArrayOf(R.color.teal, R.color.rust, R.color.dark)
-    private var colourIndex = 0
+    private val photos = intArrayOf(R.drawable.img_green, R.drawable.img_sea, R.drawable.img_rose)
+    private var photoIndex = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_story_editor)
 
-        val canvas = findViewById<EditText>(R.id.etStoryText)
+        val sticker = findViewById<EditText>(R.id.etStoryText)
+        val photo = findViewById<ImageView>(R.id.storyPhoto)
 
-        findViewById<TextView>(R.id.btnCloseEditor).setOnClickListener { finish() }
+        findViewById<View>(R.id.btnCloseEditor).setOnClickListener { finish() }
 
-        findViewById<TextView>(R.id.btnChangeColour).setOnClickListener {
-            // % wraps the index back to 0 after the last colour
-            colourIndex = (colourIndex + 1) % colours.size
-            findViewById<View>(R.id.storyEditorRoot)
-                .setBackgroundResource(colours[colourIndex])
+        findViewById<View>(R.id.btnChangeColour).setOnClickListener {
+            photoIndex = (photoIndex + 1) % photos.size
+            photo.setImageResource(photos[photoIndex])
         }
 
-        findViewById<TextView>(R.id.btnShareStory).setOnClickListener {
+        findViewById<View>(R.id.btnShareStory).setOnClickListener {
             val intent = Intent(this, YourStoryActivity::class.java)
-            intent.putExtra(YourStoryActivity.EXTRA_TEXT, canvas.text.toString())
-            intent.putExtra(YourStoryActivity.EXTRA_COLOUR, colours[colourIndex])
+            intent.putExtra(YourStoryActivity.EXTRA_TEXT, sticker.text.toString())
+            intent.putExtra(YourStoryActivity.EXTRA_PHOTO, photos[photoIndex])
             startActivity(intent)
             finish()
         }

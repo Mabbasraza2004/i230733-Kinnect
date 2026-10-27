@@ -2,20 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:clickable="true"
-    android:focusable="true"
-    android:gravity="center_vertical"
     android:orientation="horizontal"
     android:paddingStart="16dp"
-    android:paddingTop="12dp"
-    android:paddingEnd="16dp"
-    android:paddingBottom="12dp">
+    android:paddingTop="10dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="10dp">
 
-    <TextView
-        android:id="@+id/tvNotifAvatar"
-        style="@style/Avatar"
-        android:layout_width="56dp"
-        android:layout_height="56dp" />
+    <FrameLayout
+        android:layout_width="66dp"
+        android:layout_height="66dp">
+
+        <TextView
+            android:id="@+id/tvNotifAvatar"
+            style="@style/Avatar"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:textSize="20sp" />
+
+        <FrameLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|end"
+            android:background="@drawable/bg_circle_white"
+            android:padding="2dp">
+
+            <ImageView
+                android:id="@+id/ivNotifType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_avatar"
+                android:padding="5dp"
+                android:tint="@color/white" />
+        </FrameLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -28,7 +47,8 @@
             android:id="@+id/tvNotifText"
             style="@style/BodyText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tvNotifTime"
@@ -36,5 +56,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp" />
+
+        <LinearLayout
+            android:id="@+id/notifButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/btnNotifConfirm"
+                style="@style/SmallTealButton"
+                android:layout_width="0dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="Confirm" />
+
+            <TextView
+                android:id="@+id/btnNotifDelete"
+                style="@style/SmallGreyButton"
+                android:layout_width="0dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:text="Delete" />
+        </LinearLayout>
     </LinearLayout>
+
+    <ImageView
+        style="@style/ToolbarIcon"
+        android:contentDescription="More"
+        android:src="@drawable/ic_more"
+        android:tint="@color/ink_muted" />
 </LinearLayout>

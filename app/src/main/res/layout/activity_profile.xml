@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="60dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="8dp">
+        android:paddingStart="6dp"
+        android:paddingEnd="10dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/btnBack"
-            style="@style/IconButton"
-            android:text="←" />
+            style="@style/ToolbarIcon"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_back" />
 
         <TextView
+            android:id="@+id/tvProfileTitle"
             style="@style/TitleText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Profile" />
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:text="Jacob West" />
+
+        <ImageView
+            style="@style/ToolbarIcon"
+            android:contentDescription="Search"
+            android:src="@drawable/ic_search" />
     </LinearLayout>
 
     <ScrollView
@@ -32,58 +43,92 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
 
-            <!-- Cover photo with the avatar overlapping its bottom edge -->
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="230dp">
+                android:layout_height="260dp">
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="170dp"
-                    android:background="@color/teal_light" />
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_sea" />
 
-                <TextView
-                    style="@style/Avatar"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="130dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@drawable/bg_circle_chip"
+                    android:contentDescription="Change cover photo"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_camera"
+                    android:tint="@color/ink" />
+
+                <FrameLayout
+                    android:layout_width="146dp"
+                    android:layout_height="146dp"
                     android:layout_gravity="bottom|start"
-                    android:layout_marginStart="16dp"
-                    android:text="AR"
-                    android:textSize="38sp" />
+                    android:layout_marginStart="14dp"
+                    android:background="@drawable/bg_circle_white"
+                    android:padding="4dp">
+
+                    <TextView
+                        style="@style/Avatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="JW"
+                        android:textSize="48sp" />
+
+                    <ImageView
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_circle_chip"
+                        android:contentDescription="Change profile picture"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_camera"
+                        android:tint="@color/ink" />
+                </FrameLayout>
             </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
                 <TextView
                     android:id="@+id/tvProfileName"
-                    style="@style/TitleText"
+                    style="@style/HeadingText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Abbas Raza"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/tvProfileBio"
-                    style="@style/BodyText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="CS student at FAST Islamabad · Building things with code" />
+                    android:layout_marginTop="10dp"
+                    android:text="Jacob West"
+                    android:textSize="30sp" />
 
                 <TextView
                     style="@style/MutedText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="248 friends" />
+                    android:text="@string/profile_friend_count"
+                    android:textSize="15sp" />
 
-                <!-- Action buttons -->
+                <TextView
+                    android:id="@+id/tvProfileBio"
+                    style="@style/BodyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Digital goodies designer. Everything is designed."
+                    android:textSize="16sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -91,87 +136,169 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        style="@style/TealButton"
+                        android:id="@+id/btnAddToStory"
+                        style="@style/SmallTealButton"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginEnd="6dp"
+                        android:layout_height="44dp"
                         android:layout_weight="1"
-                        android:text="+ Add to story" />
+                        android:drawableStart="@drawable/ic_plus"
+                        android:drawableTint="@color/white"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="10dp"
+                        android:text="Add to story" />
 
                     <TextView
                         android:id="@+id/btnEditProfile"
-                        style="@style/ChipButton"
+                        style="@style/SmallGreyButton"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="6dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
-                        android:text="✎ Edit profile" />
+                        android:drawableStart="@drawable/ic_edit"
+                        android:drawableTint="@color/ink"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="10dp"
+                        android:text="Edit profile" />
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_button_small_grey"
+                        android:contentDescription="More"
+                        android:padding="11dp"
+                        android:src="@drawable/ic_more"
+                        android:tint="@color/ink" />
                 </LinearLayout>
 
-                <!-- Details -->
-                <TextView
-                    style="@style/BodyText"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/figtree_bold"
-                    android:text="Details" />
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ProfileTab"
+                        android:background="@drawable/bg_pill_teal_light"
+                        android:text="Posts"
+                        android:textColor="@color/teal" />
+
+                    <TextView
+                        style="@style/ProfileTab"
+                        android:text="Photos" />
+
+                    <TextView
+                        style="@style/ProfileTab"
+                        android:text="Videos" />
+
+                    <TextView
+                        style="@style/ProfileTab"
+                        android:text="Groups" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/divider" />
 
                 <TextView
-                    style="@style/BodyText"
+                    style="@style/SectionText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="🎓  Studies at FAST NUCES" />
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="Details"
+                    android:textSize="21sp" />
 
                 <TextView
-                    style="@style/BodyText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="🏠  Lives in Islamabad" />
+                    style="@style/DetailRow"
+                    android:drawableStart="@drawable/ic_briefcase"
+                    android:text="@string/detail_work" />
 
                 <TextView
-                    style="@style/BodyText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="🕒  Joined 2023" />
+                    style="@style/DetailRow"
+                    android:drawableStart="@drawable/ic_school"
+                    android:text="@string/detail_study" />
 
-                <!-- Photos -->
                 <TextView
-                    style="@style/BodyText"
+                    style="@style/DetailRow"
+                    android:drawableStart="@drawable/ic_location"
+                    android:text="@string/detail_lives" />
+
+                <TextView
+                    style="@style/DetailRow"
+                    android:drawableStart="@drawable/ic_clock"
+                    android:text="Joined March 2019" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/SectionText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Friends"
+                        android:textSize="21sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/figtree_bold"
+                        android:text="Find friends"
+                        android:textColor="@color/teal"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/MutedText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/figtree_bold"
-                    android:text="Photos" />
+                    android:text="834 friends"
+                    android:textSize="15sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
-                    <View
+                    <TextView
+                        style="@style/Avatar"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="4dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bg_photo" />
+                        android:background="@drawable/bg_rounded_square"
+                        android:backgroundTint="@color/av_purple"
+                        android:text="LM"
+                        android:textSize="34sp" />
 
-                    <View
+                    <TextView
+                        style="@style/Avatar"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="4dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bg_story_card" />
+                        android:background="@drawable/bg_rounded_square"
+                        android:backgroundTint="@color/av_crimson"
+                        android:text="AK"
+                        android:textSize="34sp" />
 
-                    <View
+                    <TextView
+                        style="@style/Avatar"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/bg_photo" />
+                        android:background="@drawable/bg_rounded_square"
+                        android:backgroundTint="@color/av_green"
+                        android:text="OF"
+                        android:textSize="34sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

@@ -1,21 +1,19 @@
 package com.abbasraza.i230733
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 
-/**
- * Friend requests. "Confirm" and "Delete" both remove the request
- * from the list, and the counter in the header updates.
- */
 class FriendsActivity : AppCompatActivity() {
-
     private lateinit var requestList: LinearLayout
     private lateinit var tvCount: TextView
+
+    private var pendingRequests = 12
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,40 +23,41 @@ class FriendsActivity : AppCompatActivity() {
         requestList = findViewById(R.id.requestList)
         tvCount = findViewById(R.id.tvRequestCount)
 
-        addRequest("Sara Noor", "4 mutual friends")
-        addRequest("Bilal Ahmed", "12 mutual friends")
-        addRequest("Daniyal Shah", "1 mutual friend")
-        addRequest("Noor Fatima", "7 mutual friends")
+        addRequest("Sara Iqbal", "8 mutual friends", "3d", R.color.av_indigo)
+        addRequest("Bilal Ahmed", "14 mutual friends", "1w", R.color.av_purple)
+        addRequest("Noor Fatima", "3 mutual friends", "2w", R.color.av_green)
+        addRequest("Daniyal Shah", "21 mutual friends", "3w", R.color.av_crimson)
         updateCount()
-
-        findViewById<TextView>(R.id.btnSearch).setOnClickListener {
-            startActivity(Intent(this, SearchActivity::class.java))
-        }
 
         BottomNav.setup(this, R.id.tabFriends)
     }
 
-    /** Adds one request row (item_friend_request.xml) with working buttons. */
-    private fun addRequest(name: String, mutual: String) {
+    private fun addRequest(name: String, mutual: String, time: String, colour: Int) {
         val row = LayoutInflater.from(this).inflate(R.layout.item_friend_request, requestList, false)
-        row.findViewById<TextView>(R.id.tvRequestAvatar).text =
-            name.split(" ").take(2).joinToString("") { it.first().uppercase() }
+        val avatar = row.findViewById<TextView>(R.id.tvRequestAvatar)
+        avatar.text = name.split(" ").take(2).joinToString("") { it.first().uppercase() }
+        avatar.backgroundTintList = ContextCompat.getColorStateList(this, colour)
         row.findViewById<TextView>(R.id.tvRequestName).text = name
         row.findViewById<TextView>(R.id.tvRequestMutual).text = mutual
+        row.findViewById<TextView>(R.id.tvRequestTime).text = time
 
         row.findViewById<TextView>(R.id.btnConfirm).setOnClickListener {
             Toast.makeText(this, "You and $name are now friends", Toast.LENGTH_SHORT).show()
-            requestList.removeView(row)
-            updateCount()
+            removeRequest(row)
         }
         row.findViewById<TextView>(R.id.btnDelete).setOnClickListener {
-            requestList.removeView(row)
-            updateCount()
+            removeRequest(row)
         }
         requestList.addView(row)
     }
 
+    private fun removeRequest(row: View) {
+        requestList.removeView(row)
+        pendingRequests--
+        updateCount()
+    }
+
     private fun updateCount() {
-        tvCount.text = "Friend requests (${requestList.childCount})"
+        tvCount.text = pendingRequests.toString()
     }
 }

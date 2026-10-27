@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <!-- Header: Cancel, title, Save -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="60dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="16dp"
@@ -16,31 +17,37 @@
 
         <TextView
             android:id="@+id/btnCancel"
-            style="@style/BodyText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="6dp"
-            android:text="Cancel" />
-
-        <TextView
-            style="@style/TitleText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Edit profile"
-            android:textSize="17sp" />
+            android:padding="4dp"
+            android:text="Cancel"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit profile" />
 
         <TextView
             android:id="@+id/btnSave"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:fontFamily="@font/figtree_bold"
-            android:padding="6dp"
+            android:gravity="end"
+            android:padding="4dp"
             android:text="Save"
             android:textColor="@color/teal"
-            android:textSize="15sp" />
+            android:textSize="16sp" />
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -50,54 +57,338 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:paddingStart="16dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/SectionText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Profile picture" />
+
+                <TextView
+                    style="@style/EditLink"
+                    android:text="Edit" />
+            </LinearLayout>
 
             <TextView
                 style="@style/Avatar"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
                 android:layout_gravity="center_horizontal"
-                android:text="AR"
-                android:textSize="32sp" />
+                android:layout_marginTop="10dp"
+                android:text="JW"
+                android:textSize="34sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="8dp"
-                android:text="Change profile picture"
-                android:textColor="@color/teal" />
-
-            <TextView
-                style="@style/MutedText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="6dp"
-                android:text="Name" />
-
-            <EditText
-                android:id="@+id/etEditName"
-                style="@style/InputField"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:inputType="textPersonName" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/SectionText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cover photo" />
+
+                <TextView
+                    style="@style/EditLink"
+                    android:text="Edit" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_sea" />
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_circle_white"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_camera"
+                        android:tint="@color/ink" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="14dp"
+                android:background="@color/divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="54dp"
+                    android:gravity="center_vertical"
+                    android:text="Name"
+                    android:textColor="@color/ink"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/etEditName"
+                        style="@style/FieldInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:inputType="text"
+                        android:text="Jacob West" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="54dp"
+                    android:gravity="center_vertical"
+                    android:text="Username"
+                    android:textColor="@color/ink"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        style="@style/FieldInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:inputType="text"
+                        android:text="jacob.west" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="54dp"
+                    android:gravity="center_vertical"
+                    android:text="Website"
+                    android:textColor="@color/ink"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        style="@style/FieldInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:inputType="text"
+                        android:hint="Website" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="54dp"
+                    android:gravity="center_vertical"
+                    android:text="Bio"
+                    android:textColor="@color/ink"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/etEditBio"
+                        style="@style/FieldInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:inputType="text"
+                        android:text="Digital goodies designer." />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+                </LinearLayout>
+            </LinearLayout>
 
             <TextView
-                style="@style/MutedText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="6dp"
-                android:text="Bio" />
+                android:fontFamily="@font/figtree_bold"
+                android:text="Switch to professional mode"
+                android:textColor="@color/teal"
+                android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/etEditBio"
-                style="@style/InputField"
+            <TextView
+                style="@style/SectionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Private information" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:gravity="top|start"
-                android:inputType="textMultiLine|textCapSentences"
-                android:paddingTop="14dp" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="54dp"
+                    android:gravity="center_vertical"
+                    android:text="Email"
+                    android:textColor="@color/ink"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        style="@style/FieldInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:inputType="text"
+                        android:text="jacob.west@mail.com" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="54dp"
+                    android:gravity="center_vertical"
+                    android:text="Phone"
+                    android:textColor="@color/ink"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        style="@style/FieldInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:inputType="text"
+                        android:text="+92 300 1234567" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="54dp"
+                    android:gravity="center_vertical"
+                    android:text="Gender"
+                    android:textColor="@color/ink"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        style="@style/FieldInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:inputType="text"
+                        android:text="Male" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

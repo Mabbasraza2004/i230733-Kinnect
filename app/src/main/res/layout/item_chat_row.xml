@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- One conversation in the inbox -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="72dp"
+    android:layout_height="80dp"
     android:background="?android:attr/selectableItemBackground"
     android:clickable="true"
     android:focusable="true"
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:paddingStart="16dp"
-    android:paddingEnd="16dp">
+    android:paddingEnd="18dp">
 
-    <TextView
-        android:id="@+id/tvChatAvatar"
-        style="@style/Avatar"
-        android:layout_width="52dp"
-        android:layout_height="52dp" />
+    <FrameLayout
+        android:layout_width="64dp"
+        android:layout_height="64dp">
+
+        <TextView
+            android:id="@+id/tvChatAvatar"
+            style="@style/Avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/chatOnlineDot"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="bottom|end"
+            android:background="@drawable/bg_dot_online"
+            android:visibility="gone" />
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="14dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -29,7 +42,7 @@
             style="@style/BodyText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/figtree_bold" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/tvChatPreview"
@@ -37,6 +50,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:textSize="15sp" />
     </LinearLayout>
+
+    <View
+        android:id="@+id/chatStatusDot"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_dot_teal"
+        android:visibility="invisible" />
 </LinearLayout>

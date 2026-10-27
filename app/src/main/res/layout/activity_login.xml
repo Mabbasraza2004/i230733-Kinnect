@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:fillViewport="true"
     android:fitsSystemWindows="true">
 
@@ -10,65 +11,173 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:paddingStart="20dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_chevron_down"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/ink_muted"
+            android:gravity="center_vertical"
+            android:text="English (UK)"
+            android:textColor="@color/ink_muted"
+            android:textSize="14sp" />
 
         <ImageView
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_marginTop="48dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_logo_square"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/logo" />
+            android:padding="14dp"
+            android:src="@drawable/ic_logo"
+            android:tint="@color/white" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="28dp"
             android:fontFamily="@font/figtree_bold"
-            android:text="kinnect"
-            android:textColor="@color/teal"
-            android:textSize="30sp" />
+            android:letterSpacing="0.05"
+            android:text="RECENT LOGIN"
+            android:textColor="@color/ink_muted"
+            android:textSize="12sp" />
 
-        <TextView
-            style="@style/MutedText"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="36dp"
-            android:text="Welcome back! Log in to continue" />
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_card_border"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp">
 
-        <EditText
-            android:id="@+id/etEmail"
-            style="@style/InputField"
-            android:layout_width="match_parent"
-            android:hint="Mobile number or email"
-            android:inputType="textEmailAddress" />
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="54dp">
 
-        <EditText
-            android:id="@+id/etPassword"
-            style="@style/InputField"
+                <TextView
+                    style="@style/Avatar"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="bottom|start"
+                    android:text="JW"
+                    android:textSize="17sp" />
+
+                <TextView
+                    style="@style/Badge"
+                    android:layout_gravity="top|end"
+                    android:text="2" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/BodyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/figtree_bold"
+                    android:text="Jacob West"
+                    android:textSize="17sp" />
+
+                <TextView
+                    style="@style/MutedText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tap to log in"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <ImageView
+                style="@style/Icon"
+                android:src="@drawable/ic_more"
+                android:tint="@color/ink_muted" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/FieldBox"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                style="@style/FieldLabel"
+                android:text="Mobile number or email" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/FieldInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="jacob.west@mail.com" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Password"
-            android:inputType="textPassword" />
+            android:background="@drawable/bg_input"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="9dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="9dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/FieldLabel"
+                    android:text="Password" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    style="@style/FieldInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:text="password123" />
+            </LinearLayout>
+
+            <ImageView
+                style="@style/Icon"
+                android:src="@drawable/ic_eye" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/btnLogin"
             style="@style/TealButton"
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
-            android:text="Log in" />
+            android:layout_height="50dp"
+            android:layout_marginTop="14dp"
+            android:text="Log in"
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/btnForgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/figtree_bold"
             android:padding="6dp"
             android:text="Forgot password?"
             android:textColor="@color/teal"
-            android:textSize="14sp" />
+            android:textSize="15sp" />
 
-        <!-- Pushes the sign-up button to the bottom of the screen -->
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -79,7 +188,20 @@
             android:id="@+id/btnCreateAccount"
             style="@style/OutlineButton"
             android:layout_width="match_parent"
-            android:text="Create new account" />
+            android:layout_height="50dp"
+            android:text="Create new account"
+            android:textSize="16sp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/ic_logo"
+            android:drawablePadding="6dp"
+            android:drawableTint="@color/ink_muted"
+            android:gravity="center_vertical"
+            android:text="Kinnect · from SMD"
+            android:textColor="@color/ink_muted"
+            android:textSize="13sp" />
     </LinearLayout>
 </ScrollView>

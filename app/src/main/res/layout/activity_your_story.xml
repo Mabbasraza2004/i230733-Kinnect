@@ -1,73 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/yourStoryRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal"
+    android:background="@color/dark"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    android:padding="12dp">
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/yourStoryPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_green" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#66FFFFFF"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:background="@color/white" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Avatar"
+                        android:text="JW"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/figtree_bold"
+                            android:text="Your story"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11h · Close friends"
+                            android:textColor="#E6FFFFFF"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnCloseStory"
+                        style="@style/ToolbarIcon"
+                        android:contentDescription="Close"
+                        android:src="@drawable/ic_close"
+                        android:tint="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvYourStoryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/bg_sticker_rust"
+                android:fontFamily="@font/figtree_bold"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:rotation="-3"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="160dp"
+                android:alpha="0.35"
+                android:src="@drawable/ic_react_love" />
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="124dp"
+                android:alpha="0.45"
+                android:src="@drawable/ic_react_love" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="18dp"
+                android:layout_marginBottom="90dp"
+                android:alpha="0.6"
+                android:src="@drawable/ic_react_love" />
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="54dp"
+                android:alpha="0.8"
+                android:src="@drawable/ic_react_love" />
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="22dp"
+                android:layout_marginBottom="16dp"
+                android:alpha="1"
+                android:src="@drawable/ic_react_love" />
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            style="@style/Avatar"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:background="@drawable/bg_avatar_rust"
-            android:text="AR"
-            android:textSize="13sp" />
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="12dp">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
+            android:layout_weight="1.3"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/figtree_bold"
-                android:text="Your story"
-                android:textColor="@color/white" />
+                android:layout_height="28dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Avatar"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:backgroundTint="@color/av_crimson"
+                    android:text="AK"
+                    android:textSize="9sp" />
+
+                <TextView
+                    style="@style/Avatar"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginStart="-6dp"
+                    android:backgroundTint="@color/av_purple"
+                    android:text="LM"
+                    android:textSize="9sp" />
+
+                <TextView
+                    style="@style/Avatar"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginStart="-6dp"
+                    android:backgroundTint="@color/av_green"
+                    android:text="OF"
+                    android:textSize="9sp" />
+            </LinearLayout>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Just now"
-                android:textColor="@color/teal_light"
-                android:textSize="12sp" />
+                style="@style/StoryBarLabel"
+                android:text="Seen by 24" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/btnCloseStory"
-            style="@style/IconButton"
-            android:text="✕"
-            android:textColor="@color/white" />
+            style="@style/StoryBarButton"
+            android:drawableTop="@drawable/ic_stories"
+            android:text="Create" />
+
+        <TextView
+            style="@style/StoryBarButton"
+            android:drawableTop="@drawable/ic_heart"
+            android:text="Highlight" />
+
+        <TextView
+            style="@style/StoryBarButton"
+            android:drawableTop="@drawable/ic_send"
+            android:text="Send" />
+
+        <TextView
+            style="@style/StoryBarButton"
+            android:drawableTop="@drawable/ic_more"
+            android:text="More" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvYourStoryText"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/figtree_bold"
-        android:gravity="center"
-        android:padding="24dp"
-        android:textColor="@color/white"
-        android:textSize="30sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="12dp"
-        android:text="👁 0 views"
-        android:textColor="@color/white" />
-
 </LinearLayout>
